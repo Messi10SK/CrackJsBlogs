@@ -18,8 +18,8 @@ console.log(err)
 
 app.use(express.json());
 
-app.listen(3000,()=>{
-    console.log('server started on port 3000')
+app.listen(1000,()=>{
+    console.log('server started on port 1000')
 })
 
 app.use('/api/user',userRoutes);
