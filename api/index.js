@@ -3,6 +3,7 @@ import mongoose from'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
+import postRoutes from './routes/post.route.js';
 import cookieParser from 'cookie-parser';
 const app = express();
 
@@ -26,6 +27,7 @@ app.listen(1000,()=>{
 
 app.use('/api/user',userRoutes);
 app.use('/api/auth',authRoutes);
+app.use('/api/post', postRoutes);
 
 
 // error handing middleware
