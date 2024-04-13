@@ -12,6 +12,7 @@ export const test = (req,res) =>{
 }
 
 export const updateUser = async (req,res,next)=>{
+  console.log(req.user.id);
     if (req.user.id !== req.params.userId) {
         return next(errorHandler(403, 'You are not allowed to update this user'));
       }
@@ -46,15 +47,15 @@ export const updateUser = async (req,res,next)=>{
           );
         }
         try {
-          const updatedUser = await User.findByIdAndUpdate(
-            req.params.userId,
-            {
-              $set: {
-                username: req.body.username,
-                email: req.body.email,
-                profilePicture: req.body.profilePicture,
-                password: req.body.password,
-              },
+            const updatedUser = await User.findByIdAndUpdate(
+              req.params.userId,
+              {
+                $set: {
+                  username: req.body.username,
+                  email: req.body.email,
+                  profilePicture: req.body.profilePicture,
+                  password: req.body.password,
+                },
             },
             { new: true }
           );
