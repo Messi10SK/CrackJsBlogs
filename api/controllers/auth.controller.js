@@ -65,7 +65,7 @@ process.env.JWT_SECRET);
 
 const{password : pass,...rest} = validUser._doc;
 res.status(200)
-.cookie('access token',token,{
+.cookie('access_token',token,{
   httpOnly:true
 })
 .json(rest);

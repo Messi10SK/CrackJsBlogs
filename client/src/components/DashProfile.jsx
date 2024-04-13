@@ -109,6 +109,8 @@ export default function DashProfile() {
       setUpdateUserError('Please wait for image to upload');
       return;
     }
+
+  
     try {
       dispatch(updateStart());
       const res = await fetch(`/api/user/update/${currentUser._id}`, {
