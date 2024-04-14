@@ -21,6 +21,7 @@ export default function CreatePost() {
   const [publishError, setPublishError] = useState(null);
 
   const navigate = useNavigate();
+  
   const handleUpdloadImage = async () => {
     try {
       if (!file) {
@@ -95,6 +96,9 @@ export default function CreatePost() {
               required
               id='title'
               className='flex-1'
+              onChange={(e) =>
+                setFormData({ ...formData, title: e.target.value })
+              }
             />
             <Select  onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
